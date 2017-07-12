@@ -1,0 +1,168 @@
+/* stylesheet */
+
+body {
+	font-family: "SF UI Text", "Helvetica Neue";
+	font-style: normal;
+	background-color: #FC452B;
+	color: #FFF;
+	overflow: hidden;
+}
+
+h1 {
+	text-transform: uppercase;
+	letter-spacing: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+.loading {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-wrapper {
+	text-align: center;
+}
+
+.loading-image {
+	width: 40px;
+	margin-top: 20px;
+}
+
+.timetable {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	overflow: scroll;
+}
+
+.timetable-wrapper {
+	width: 100%;
+	overflow: scroll;
+	background-color: #FC452B;
+}
+
+.station-row {
+	position: relative;
+	width: 100vw;
+	height: 150px;
+	background-color: #FFF;
+	margin-bottom: 2px;
+}
+
+.station-name > p {
+	color: #FFF;
+}
+
+.station-name {
+	position: absolute;
+	left: -150px;
+	padding: 10px 0 10px 0;
+	box-sizing: border-box;
+	width: 150px;
+	text-align: center;
+	transform: rotate(270deg);
+	transform-origin: top right;
+	background-color: #FC452B;
+	font-size: 12px;
+}
+
+.service-wrapper {
+	margin-left: 38px;
+	height: 150px;
+	width: calc(100% - 38px);
+	white-space: wrap;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: row;
+
+}
+
+.service {
+	display: flex;
+	flex-basis: 150px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	min-width: 250px;
+	justify-content: space-around;
+	padding: 10px;
+	color: #000;
+}
+
+.time-status {
+	display: flex;
+	font-size: 18px;
+}
+
+.time {
+	font-weight: 600;
+}
+
+.status {
+	font-size: 12px;
+	align-self: flex-end;
+	padding-left: 5px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.platform {
+	font-size: 12px;
+	align-self: flex-end;
+	display: inline-block;
+	text-align: right;
+	width: 100%;
+}
+
+.calling-points {
+	font-size: 10px;
+}
+
+.train-operator {
+	font-size: 10px;
+	text-align: left;
+	font-style: italic;
+	color: grey;
+}
+.on-time {
+	color: #4cd964;
+}
+
+.original-delayed {
+	text-decoration: line-through;
+}
+
+.delayed, .cancelled {
+	color: #ff3b30;
+}
+
+.unavailable {
+	color: grey;
+}
+
+.strikethrough {
+  position: relative;
+}
+.strikethrough:before {
+  position: absolute;
+  content: "";
+  left: -5px;
+  top: 50%;
+  right: -5px;
+  border-top: 1px solid;
+  border-color: inherit;
+  transform:rotate(-15deg);
+}
+
+.reposition {
+	transform: translateY(-100vh);
+	transition: 0.75s all;
+}
