@@ -47,7 +47,6 @@ p {
 .timetable-wrapper {
 	width: 100%;
 	overflow: scroll;
-	overflow-scrolling: touch;
 	background-color: #FC452B;
 }
 
@@ -84,6 +83,8 @@ p {
 	overflow-y: scroll;
 	display: flex;
 	flex-direction: row;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 
 }
 
