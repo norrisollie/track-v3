@@ -46,6 +46,7 @@ p {
 
 .timetable-wrapper {
 	width: 100%;
+	height: 100vw;
 	overflow: scroll;
 	background-color: #FC452B;
 }
