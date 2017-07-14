@@ -5,6 +5,8 @@ body {
 	font-style: normal;
 	background-color: #FC452B;
 	color: #FFF;
+	overflow: hidden;
+	font-weight: 400;
 }
 
 h1 {
@@ -45,7 +47,6 @@ p {
 
 .timetable-wrapper {
 	width: 100%;
-	height: 100vw;
 	overflow: scroll;
 	background-color: #FC452B;
 }
@@ -81,10 +82,9 @@ p {
 	width: calc(100% - 38px);
 	white-space: wrap;
 	overflow-y: scroll;
+	overflow-scrolling: touch;
 	display: flex;
 	flex-direction: row;
-	overflow-scrolling: touch;
-	-webkit-overflow-scrolling: touch;
 
 }
 
@@ -121,7 +121,7 @@ p {
 	align-self: flex-end;
 	display: inline-block;
 	text-align: right;
-	width: 100%;
+	width: 50%;
 }
 
 .calling-points {

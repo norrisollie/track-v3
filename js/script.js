@@ -7,13 +7,15 @@ function app() {
 
     // var token = "c8eebaa7-d421-4025-bb02-989cc9c53b39";
 
-    console.log("App is running");
+    //console.log("App is running");
 
     // store element in dom
     var loadingHeaderMessage = document.getElementById("loading-message");
+    var loadingImage = document.getElementById("loading-image");
 
     // change inner html
     loadingHeaderMessage.innerHTML = "Finding nearest stations";
+    loadingImage.innerHTML = "";
 
     // start finding user coords
     // function to see whether browser supports geolocation and get their location if it does
@@ -24,6 +26,7 @@ function app() {
 
             // display message to user
             loadingHeaderMessage.innerHTML = "Your browser doesn't support GeoLocation";
+            loadingImage.innerHTML = "";
             return;
 
         }
@@ -36,7 +39,7 @@ function app() {
             var longitude = position.coords.longitude;
 
             // log user's coordinates to the console
-            console.log(latitude + "," + longitude);
+            //console.log(latitude + "," + longitude);
 
             // construct url
             var appID = "91798de7",
@@ -44,7 +47,7 @@ function app() {
                 nearestStationsUrl = "https://transportapi.com/v3/uk/train/stations/near.json?app_id=" + appID + "&app_key=" + appKey + "&lat=" + latitude + "&lon=" + longitude + "&rpp=5";
 
             // log url to console
-            console.log(nearestStationsUrl);
+            //console.log(nearestStationsUrl);
 
             // make ajax request
             var nearestStationsReq = new XMLHttpRequest();
@@ -61,7 +64,7 @@ function app() {
                     var res = JSON.parse(this.response);
 
                     // log response to console
-                    console.log(res);
+                    //console.log(res);
 
                     // enter stations array
                     var stations = res.stations
@@ -87,7 +90,7 @@ function app() {
                         var urls = "https://transportapi.com/v3/uk/train/station/" + code + "/live.json?app_id=" + appID + "&app_key=" + appKey + "&darwin=false&train_status=passenger"
 
                         // log to console
-                        console.log(code + ", " + name + ", " + distance + ", " + urls);
+                        //console.log(code + ", " + name + ", " + distance + ", " + urls);
 
                         // push urls to an array
                         reqUrls.push(urls);
@@ -123,7 +126,7 @@ function app() {
 
                             for (var i = 0; i < departures.length; i++) {
 
-                                console.log(res);
+                                //console.log(res);
 
                                 // store values in dom
                                 var currentStation = res.station_name;
@@ -137,13 +140,13 @@ function app() {
 
                                 if (platform === null) {
 
-                                // change variable to empty string
+                                // change variable to string
                                 var platform = "n/a";
 
                                 }
 
                                 // logged
-                                console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
+                                //console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
 
                                 // switch statement to change styling based on status
                                 switch (status) {
@@ -217,7 +220,7 @@ function app() {
 
                             for (var i = 0; i < departures.length; i++) {
 
-                                console.log(res);
+                                //console.log(res);
 
                                 // store values in dom
                                 var currentStation = res.station_name;
@@ -231,13 +234,13 @@ function app() {
 
                                 if (platform === null) {
 
-                                // change variable to empty string
+                                // change variable to  string
                                 var platform = "n/a";
 
                                 }
 
                                 // logged
-                                console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
+                                //console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
 
                                 // switch statement to change styling based on status
                                 switch (status) {
@@ -311,7 +314,7 @@ function app() {
 
                             for (var i = 0; i < departures.length; i++) {
 
-                                console.log(res);
+                                //console.log(res);
 
                                 // store values in dom
                                 var currentStation = res.station_name;
@@ -331,7 +334,7 @@ function app() {
                                 }
 
                                 // logged
-                                console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
+                                //console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
 
                                 // switch statement to change styling based on status
                                 switch (status) {
@@ -405,7 +408,7 @@ function app() {
 
                             for (var i = 0; i < departures.length; i++) {
 
-                                console.log(res);
+                                //console.log(res);
 
                                 // store values in dom
                                 var currentStation = res.station_name;
@@ -425,7 +428,7 @@ function app() {
                                 }
 
                                 // logged
-                                console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
+                                //console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
 
                                 // switch statement to change styling based on status
                                 switch (status) {
@@ -498,7 +501,7 @@ function app() {
 
                             for (var i = 0; i < departures.length; i++) {
 
-                                console.log(res);
+                                //console.log(res);
 
                                 // store values in dom
                                 var currentStation = res.station_name;
@@ -518,7 +521,7 @@ function app() {
                                 }
 
                                 // logged
-                                console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
+                                //console.log("Current Station: " + currentStation + " Aimed: " + aimedDepartTime + " | Expected: " + expectedDepartTime + " | Destination: " + destination + " | Platform: " + platform + " | Status: " + status + " | Operator: " + operator + " | ID: " + trainUID);
 
                                 // switch statement to change styling based on status
                                 switch (status) {
@@ -564,6 +567,10 @@ function app() {
 
                                 serviceWrappers[4].innerHTML += serviceTemplate;
 
+                                var timeTableWindow = document.getElementById("timetable")
+
+                    timeTableWindow.classList.add("reposition");
+
                             }
 
                         } else {
@@ -579,57 +586,10 @@ function app() {
 
                     serviceFive.send();
 
-                    var timeTableWindow = document.getElementById("timetable")
-
-                    timeTableWindow.classList.add("reposition");
-
-                   
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 } else {
                     // if status is not between 200 and 399
                     loadingHeaderMessage.innerHTML = "Unable to find closest stations";
+                    loadingImage.innerHTML = "";
                 }
             };
 
@@ -637,12 +597,11 @@ function app() {
             nearestStationsReq.onerror = function() {
                 // connection error
                 loadingHeaderMessage.innerHTML = "Unable to find closest stations";
+                loadingImage.innerHTML = "";
             }
 
             // send the request
             nearestStationsReq.send();
-
-
 
         }
 
@@ -651,6 +610,7 @@ function app() {
 
             // display message to user
             loadingHeaderMessage.innerHTML = "Unable to find closest stations";
+            loadingImage.innerHTML = "";
         }
 
         // callback to decide which function to run
@@ -658,10 +618,6 @@ function app() {
     }
 
     getUserLocation();
-
-
-
-    
 
 }
 
